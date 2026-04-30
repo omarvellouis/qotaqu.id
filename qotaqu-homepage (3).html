@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qotaqu.id - Kotak Kado Premium Purwokerto | Grosir & Eceran</title>
+    <meta name="description" content="Kotak kado premium berkualitas. Dipercaya 100,000+ pembeli sejak 2020. Grosir & eceran. Pengiriman 24/7 ke seluruh Indonesia.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Brand Colors */
+            --primary-red: #E63946;
+            --primary-red-dark: #C62E38;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F4E4C1;
+            
+            /* Neutrals */
+            --cream: #FAF7F2;
+            --cream-dark: #F5EFE7;
+            --gray-100: #F8F9FA;
+            --gray-300: #DEE2E6;
+            --gray-600: #6C757D;
+            --gray-900: #212529;
+            
+            /* Semantic */
+            --success: #28A745;
+            --warning: #FFC107;
+            
+            /* Typography */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2.5rem;
+            --spacing-xl: 4rem;
+            
+            /* Effects */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 12px 24px rgba(0,0,0,0.12);
+            --shadow-red: 0 8px 20px rgba(230, 57, 70, 0.2);
+            
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--gray-900);
+            background: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 900;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: -0.02em;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.01em;
+        }
+        
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(230, 57, 70, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--gray-900);
+        }
+        
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-red);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover .logo-icon {
+            transform: rotate(15deg) scale(1.05);
+        }
+        
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--gray-900);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .btn-shop {
+            background: var(--primary-red) !important;
+            color: white !important;
+            padding: 0.6rem 1.5rem !important;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-shop:hover {
+            background: var(--primary-red-dark) !important;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-red);
+        }
+        
+        .btn-shop::after {
+            display: none !important;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--gray-900);
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: 80px;
+            padding: var(--spacing-xl) 2rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(230, 57, 70, 0.05) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, -30px) rotate(5deg); }
+        }
+        
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-red);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .hero h1 {
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--primary-red) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.8;
+        }
+        
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            font-family: var(--font-body);
+        }
+        
+        .btn-primary {
+            background: var(--primary-red);
+            color: white;
+            box-shadow: var(--shadow-red);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(230, 57, 70, 0.3);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--gray-900);
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--gray-300);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+            transform: translateY(-2px);
+        }
+        
+        .hero-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            animation: slideInRight 0.8s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .hero-gallery-item {
+            aspect-ratio: 1;
+            background: white;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-gallery-item:hover {
+            transform: translateY(-8px) rotate(2deg);
+        }
+        
+        .hero-gallery-item:nth-child(1) {
+            background: linear-gradient(135deg, #FFE5E5 0%, #FFF0F0 100%);
+        }
+        
+        .hero-gallery-item:nth-child(2) {
+            background: linear-gradient(135deg, #FFF8E5 0%, #FFFCF0 100%);
+        }
+        
+        .hero-gallery-item:nth-child(3) {
+            background: linear-gradient(135deg, #E5F5FF 0%, #F0FAFF 100%);
+        }
+        
+        .hero-gallery-item:nth-child(4) {
+            background: linear-gradient(135deg, #F0E5FF 0%, #F8F0FF 100%);
+        }
+        
+        /* ===== SECTION COMMON ===== */
+        .section {
+            padding: var(--spacing-xl) 2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .section-badge {
+            display: inline-block;
+            background: var(--accent-gold-light);
+            color: var(--gray-900);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .section-title {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .section-subtitle {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ===== CATEGORIES ===== */
+        .categories {
+            background: white;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .category-card {
+            background: var(--cream);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-red);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+        
+        .category-name {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .category-desc {
+            color: var(--gray-600);
+            margin-bottom: var(--spacing-md);
+            font-size: 0.95rem;
+        }
+        
+        .category-price {
+            color: var(--primary-red);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        /* ===== PRODUCTS ===== */
+        .products {
+            background: var(--cream);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        
+        .product-image {
+            aspect-ratio: 1;
+            background: var(--cream-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-red);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .product-badge.limited {
+            background: var(--warning);
+            color: var(--gray-900);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-category {
+            color: var(--gray-600);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-name {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .stars {
+            color: var(--accent-gold);
+        }
+        
+        .rating-number {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+        
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+        
+        .product-price {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-red);
+        }
+        
+        .add-to-cart {
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .add-to-cart:hover {
+            background: var(--primary-red-dark);
+            transform: scale(1.1);
+        }
+        
+        /* ===== VALUE PROPS ===== */
+        .value-props {
+            background: white;
+        }
+        
+        .props-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .prop-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--cream);
+            border-radius: var(--radius-lg);
+            transition: transform 0.3s ease;
+        }
+        
+        .prop-item:hover {
+            transform: translateY(-4px);
+        }
+        
+        .prop-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+        
+        .prop-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .prop-desc {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+        
+        /* ===== HOW TO ORDER ===== */
+        .how-to-order {
+            background: var(--cream);
+        }
+        
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            position: relative;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            font-family: var(--font-display);
+            margin: 0 auto var(--spacing-md);
+            box-shadow: var(--shadow-red);
+        }
+        
+        .step-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .step-desc {
+            color: var(--gray-600);
+        }
+        
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            background: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--primary-red);
+        }
+        
+        .testimonial-stars {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--gray-900);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--accent-gold) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .author-info {
+            flex: 1;
+        }
+        
+        .author-name {
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+        
+        .author-location {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+        
+        /* ===== CUSTOM ORDER CTA ===== */
+        .custom-cta {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .custom-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .custom-cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .custom-cta-icon {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .custom-cta h2 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .custom-cta-text {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.95;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--primary-red);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-white:hover {
+            background: var(--cream);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--gray-900);
+            color: white;
+            padding: var(--spacing-xl) 2rem var(--spacing-lg);
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .footer-brand h3 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-desc {
+            color: var(--gray-300);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-link:hover {
+            background: var(--primary-red);
+            transform: scale(1.1);
+        }
+        
+        .footer-section h4 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-red);
+        }
+        
+        .footer-bottom {
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--gray-300);
+            font-size: 0.9rem;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-gallery {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+                pointer-events: none;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .hero {
+                padding: var(--spacing-lg) 2rem;
+            }
+            
+            .hero-ctas {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .section {
+                padding: var(--spacing-lg) 1rem;
+            }
+            
+            .categories-grid,
+            .products-grid,
+            .props-grid,
+            .steps-container,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        /* ===== UTILITIES ===== */
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">🎁</div>
+                <span class="logo-text">Qotaqu</span>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#categories">Kategori</a></li>
+                <li><a href="#products">Produk</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li>
+                    <a href="https://shop.qotaqu.id" class="btn-shop">
+                        Belanja
+                    </a>
+                </li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    ✨ Dipercaya 100,000+ Pembeli Sejak 2020
+                </div>
+                <h1>Kotak Kado Premium untuk Setiap Momen Spesial</h1>
+                <p class="hero-subtitle">
+                    Kualitas premium dengan harga grosir yang bersahabat. Pilihan terlengkap untuk semua kebutuhan packaging hadiah Anda — dari gift box klasik hingga sliding box mewah.
+                </p>
+                <div class="hero-ctas">
+                    <a href="https://shop.qotaqu.id" class="btn btn-primary">
+                        Belanja Sekarang
+                    </a>
+                    <a href="#kontak" class="btn btn-secondary">
+                        Custom Order
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-gallery">
+                <div class="hero-gallery-item">🎁</div>
+                <div class="hero-gallery-item">📦</div>
+                <div class="hero-gallery-item">🎀</div>
+                <div class="hero-gallery-item">🏠</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section categories" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Pilihan Produk</span>
+                <h2 class="section-title">Kategori Kotak Kado</h2>
+                <p class="section-subtitle">
+                    Dari kotak kado klasik hingga premium luxury box — semua tersedia dengan harga yang kompetitif
+                </p>
+            </div>
+            
+            <div class="categories-grid">
+                <a href="https://shop.qotaqu.id/category/gift-box" class="category-card">
+                    <span class="category-icon">🎁</span>
+                    <h3 class="category-name">Gift Box</h3>
+                    <p class="category-desc">Kotak kado klasik untuk berbagai hadiah</p>
+                    <p class="category-price">Mulai dari Rp 5.000</p>
+                </a>
+                
+                <a href="https://shop.qotaqu.id/category/sling-box" class="category-card">
+                    <span class="category-icon">📦</span>
+                    <h3 class="category-name">Sling Box</h3>
+                    <p class="category-desc">Kotak dengan pegangan untuk kemudahan</p>
+                    <p class="category-price">Mulai dari Rp 8.000</p>
+                </a>
+                
+                <a href="https://shop.qotaqu.id/category/sliding-box" class="category-card">
+                    <span class="category-icon">🎀</span>
+                    <h3 class="category-name">Sliding Box</h3>
+                    <p class="category-desc">Kotak geser elegan premium</p>
+                    <p class="category-price">Mulai dari Rp 10.000</p>
+                </a>
+                
+                <a href="https://shop.qotaqu.id/category/gable-box" class="category-card">
+                    <span class="category-icon">🏠</span>
+                    <h3 class="category-name">Gable Box</h3>
+                    <p class="category-desc">Kotak atap untuk snack & hampers</p>
+                    <p class="category-price">Mulai dari Rp 6.000</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="section products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Produk Terlaris</span>
+                <h2 class="section-title">Pilihan Favorit Pelanggan</h2>
+                <p class="section-subtitle">
+                    Produk yang paling banyak dipilih oleh ribuan pelanggan kami
+                </p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <a href="https://shop.qotaqu.id/product/1" class="product-card">
+                    <div class="product-image">
+                        🎁
+                        <span class="product-badge">Best Seller</span>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Gift Box</p>
+                        <h3 class="product-name">Gift Box Premium Red</h3>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-number">(4.9)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">Rp 15.000</span>
+                            <button class="add-to-cart" onclick="event.preventDefault(); alert('Product added to cart!');">🛒</button>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Product 2 -->
+                <a href="https://shop.qotaqu.id/product/2" class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #FFF8E5 0%, #FFFCF0 100%);">
+                        📦
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Sling Box</p>
+                        <h3 class="product-name">Sling Box Craft Natural</h3>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-number">(4.8)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">Rp 18.000</span>
+                            <button class="add-to-cart" onclick="event.preventDefault(); alert('Product added to cart!');">🛒</button>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Product 3 -->
+                <a href="https://shop.qotaqu.id/product/3" class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #E5F5FF 0%, #F0FAFF 100%);">
+                        🎀
+                        <span class="product-badge">Best Seller</span>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Sliding Box</p>
+                        <h3 class="product-name">Sliding Box Black Luxury</h3>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-number">(5.0)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">Rp 25.000</span>
+                            <button class="add-to-cart" onclick="event.preventDefault(); alert('Product added to cart!');">🛒</button>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Product 4 -->
+                <a href="https://shop.qotaqu.id/product/4" class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #F0E5FF 0%, #F8F0FF 100%);">
+                        🏠
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Gable Box</p>
+                        <h3 class="product-name">Gable Box Hampers</h3>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐</span>
+                            <span class="rating-number">(4.7)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">Rp 12.000</span>
+                            <button class="add-to-cart" onclick="event.preventDefault(); alert('Product added to cart!');">🛒</button>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Product 5 -->
+                <a href="https://shop.qotaqu.id/product/5" class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #FFE5F0 0%, #FFF0F7 100%);">
+                        🎁
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Gift Box</p>
+                        <h3 class="product-name">Gift Box Floral Pattern</h3>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-number">(4.9)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">Rp 20.000</span>
+                            <button class="add-to-cart" onclick="event.preventDefault(); alert('Product added to cart!');">🛒</button>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Product 6 -->
+                <a href="https://shop.qotaqu.id/product/6" class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #FFF5E5 0%, #FFFAF0 100%);">
+                        🎀
+                        <span class="product-badge limited">Limited</span>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Sliding Box</p>
+                        <h3 class="product-name">Sliding Box Rose Gold</h3>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-number">(5.0)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">Rp 30.000</span>
+                            <button class="add-to-cart" onclick="event.preventDefault(); alert('Product added to cart!');">🛒</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUE PROPS -->
+    <section class="section value-props" id="tentang">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Kenapa Pilih Qotaqu?</h2>
+            </div>
+            
+            <div class="props-grid">
+                <div class="prop-item">
+                    <span class="prop-icon">✅</span>
+                    <h3 class="prop-title">100,000+ Terjual</h3>
+                    <p class="prop-desc">Dipercaya ribuan pelanggan sejak 2020</p>
+                </div>
+                
+                <div class="prop-item">
+                    <span class="prop-icon">🚚</span>
+                    <h3 class="prop-title">Pengiriman 24/7</h3>
+                    <p class="prop-desc">JNT delivery ke seluruh Indonesia</p>
+                </div>
+                
+                <div class="prop-item">
+                    <span class="prop-icon">💰</span>
+                    <h3 class="prop-title">Harga Grosir</h3>
+                    <p class="prop-desc">Tersedia harga khusus untuk reseller</p>
+                </div>
+                
+                <div class="prop-item">
+                    <span class="prop-icon">🎨</span>
+                    <h3 class="prop-title">Custom Order</h3>
+                    <p class="prop-desc">Desain khusus sesuai kebutuhan Anda</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW TO ORDER -->
+    <section class="section how-to-order">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Cara Pemesanan</span>
+                <h2 class="section-title">Mudah & Cepat</h2>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Pilih Produk</h3>
+                    <p class="step-desc">Pilih kotak kado sesuai kebutuhan dari katalog kami</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Checkout Aman</h3>
+                    <p class="step-desc">Proses pembayaran mudah dan terjamin keamanannya</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Terima Cepat</h3>
+                    <p class="step-desc">Pesanan dikirim dalam 24-48 jam ke seluruh Indonesia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST INDICATORS -->
+    <section class="section" style="background: white; padding: var(--spacing-lg) 2rem;">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: var(--spacing-lg); color: var(--gray-900);">
+                    Kenapa Ribuan Pelanggan Memilih Qotaqu?
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: var(--spacing-lg);">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: 900; color: var(--primary-red); font-family: var(--font-display); margin-bottom: 0.5rem;">100K+</div>
+                        <p style="color: var(--gray-600); font-weight: 500;">Produk Terjual</p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: 900; color: var(--primary-red); font-family: var(--font-display); margin-bottom: 0.5rem;">6+</div>
+                        <p style="color: var(--gray-600); font-weight: 500;">Tahun Berpengalaman</p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: 900; color: var(--primary-red); font-family: var(--font-display); margin-bottom: 0.5rem;">4.9/5</div>
+                        <p style="color: var(--gray-600); font-weight: 500;">Rating Pelanggan</p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: 900; color: var(--primary-red); font-family: var(--font-display); margin-bottom: 0.5rem;">24/7</div>
+                        <p style="color: var(--gray-600); font-weight: 500;">Pengiriman JNT</p>
+                    </div>
+                </div>
+                
+                <div style="background: var(--cream); padding: 2rem; border-radius: var(--radius-lg); border-left: 4px solid var(--primary-red);">
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray-900); margin-bottom: 1rem;">
+                        <strong>Jaminan Kepuasan Pelanggan:</strong> Produk berkualitas premium dengan harga grosir yang kompetitif. 
+                        Kami pastikan setiap kotak kado yang Anda terima sesuai dengan standar kualitas tertinggi.
+                    </p>
+                    <p style="color: var(--gray-600); font-size: 0.95rem;">
+                        ✓ Kualitas Terjamin &nbsp;&nbsp; ✓ Harga Kompetitif &nbsp;&nbsp; ✓ Pengiriman Cepat &nbsp;&nbsp; ✓ Customer Service Responsif
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Testimoni</span>
+                <h2 class="section-title">Apa Kata Mereka</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Kualitas premium, harga bersahabat! Sudah repeat order 5x untuk toko saya. Pengiriman selalu cepat dan packingnya rapi."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <div class="author-name">Siti R.</div>
+                            <div class="author-location">Jakarta</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Packingnya rapi banget, pengiriman cepat. Recommended untuk grosir! Harga bersaing dan kualitas tidak mengecewakan."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">B</div>
+                        <div class="author-info">
+                            <div class="author-name">Budi W.</div>
+                            <div class="author-location">Surabaya</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Cocok buat kado ultah, temen-temen suka! Custom order juga bisa. Responnya cepat dan hasilnya memuaskan."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">D</div>
+                        <div class="author-info">
+                            <div class="author-name">Dina M.</div>
+                            <div class="author-location">Bandung</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOM ORDER CTA -->
+    <section class="section custom-cta" id="kontak">
+        <div class="container">
+            <div class="custom-cta-container">
+                <div class="custom-cta-icon">🎨</div>
+                <h2>Butuh Desain atau Ukuran Khusus?</h2>
+                <p class="custom-cta-text">
+                    Kami melayani custom order untuk berbagai acara spesial Anda.<br>
+                    Wedding, graduation, corporate event, atau kebutuhan khusus lainnya — konsultasikan gratis dengan tim kami.
+                </p>
+                <a href="https://wa.me/6281234567890?text=Halo%20Qotaqu,%20saya%20ingin%20custom%20order" class="btn btn-white">
+                    Konsultasi Gratis via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Qotaqu.id</h3>
+                    <p class="footer-desc">
+                        Pusat kotak kado premium dari Purwokerto untuk seluruh Indonesia. 
+                        Melayani grosir & eceran dengan pengiriman cepat 24/7. Dipercaya 100,000+ pelanggan sejak 2020.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/qotaqu.id" class="social-link" target="_blank">📷</a>
+                        <a href="https://shopee.co.id/qotaqu" class="social-link" target="_blank">🛍️</a>
+                        <a href="https://wa.me/6281234567890" class="social-link" target="_blank">💬</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Produk</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://shop.qotaqu.id/category/gift-box">Gift Box</a></li>
+                        <li><a href="https://shop.qotaqu.id/category/sling-box">Sling Box</a></li>
+                        <li><a href="https://shop.qotaqu.id/category/sliding-box">Sliding Box</a></li>
+                        <li><a href="https://shop.qotaqu.id/category/gable-box">Gable Box</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Perusahaan</h4>
+                    <ul class="footer-links">
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#kontak">Hubungi Kami</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Bantuan</h4>
+                    <ul class="footer-links">
+                        <li><a href="/cara-order">Cara Order</a></li>
+                        <li><a href="/pengiriman">Pengiriman</a></li>
+                        <li><a href="/syarat-ketentuan">Syarat & Ketentuan</a></li>
+                        <li><a href="/privacy">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Qotaqu.id - Kotak Kado Purwokerto. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.textContent = '☰';
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.category-card, .product-card, .prop-item, .step, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
